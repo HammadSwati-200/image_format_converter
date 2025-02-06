@@ -39,6 +39,7 @@ A lightweight and easy-to-use image format converter built with **HTML, CSS, and
 
 ## 🎥 Demo
 ![Demo GIF](demo.gif)
+🔗 [Live Preview](https://hammadswati-200.github.io/image_format_converter/)
 
 ## 🤝 Contributing
 
