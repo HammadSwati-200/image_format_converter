@@ -1,0 +1,253 @@
+@keyframes progress {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.drop-zone {
+    border: 2px dashed #cbd5e0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drop-zone.dragover {
+    border-color: #6366f1;
+    background-color: rgba(99, 102, 241, 0.05);
+}
+
+.format-option {
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.format-option:hover {
+    transform: translateY(-2px);
+}
+
+.format-option.selected {
+    border-color: #6366f1;
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+.convert-btn {
+    background-image: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.convert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.checkmark {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: draw 0.6s ease forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating-shape {
+    animation: float 6s ease-in-out infinite;
+}
+
+.drop-zone {
+    border: 2px dashed #cbd5e0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+    border-color: #6366f1;
+    background-color: rgba(99, 102, 241, 0.05);
+}
+
+.preview-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.preview-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.preview-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 3px solid #e0e7ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.preview-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add to your CSS */
+.preview-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.remove-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.preview-item:hover .remove-btn {
+    display: flex;
+}
+
+.converted-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(99, 102, 241, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+}
+
+.converted .converted-overlay {
+    display: flex;
+}
+
+.add-more-btn .preview-image {
+    transition: all 0.3s ease;
+}
+
+.add-more-btn:hover .preview-image {
+    transform: scale(1.05);
+    border-color: #6366f1;
+}
+
+@keyframes uploadProgress {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.upload-loader {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #6366f1;
+    animation: uploadProgress 1s ease;
+}
+
+.conversion-loader {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e0e7ff;
+    border-top-color: #6366f1;
+    animation: spin 1s linear infinite;
+}
+
+.step-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-icon {
+    transition: opacity 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .arrow-icon:hover {
+        opacity: 0.8;
+    }
+}
+
+.format-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.format-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.format-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0.75rem;
+}
+
+.format-card:hover::before {
+    opacity: 1;
+}
